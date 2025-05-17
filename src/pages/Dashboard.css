@@ -1,0 +1,546 @@
+/* General Styles */
+html, body {
+  overflow-x:auto;
+  width: 100vw;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+    overflow: hidden;
+  }
+  
+  /* Theme Toggle */
+  body.dark {
+    background: #121212;
+    color: #ffffff;
+  }
+  body.light {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .theme-toggle {
+    margin: 10px;
+    text-align: right;
+  }
+  .theme-toggle button {
+    background: #0078D4;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .dashboard-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+  /* Dashboard Container */
+  .dashboard {
+    flex: 1; /* Take all available space */
+    width: 100%; /* Match the layout */
+    min-width: 1200px; /* Prevent shrinkage */
+    overflow-y: auto; /* Only dashboard content scrolls */
+  }
+  
+  .dashboard-container {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  
+  
+  /* Controls Section */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .controls input[type="file"] {
+    display: none;
+  }
+  .controls label.upload-label {
+    background: #0078D4;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .controls input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .controls button {
+    background: #0078D4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .controls button:hover {
+    background: #005bb5;
+  }
+  
+  /* Sorting Dropdown */
+  .sorting-dropdown {
+    margin-left: auto;
+  }
+  .sorting-dropdown select {
+    padding: 8px;
+    border: 1px solid #4caf50;
+    border-radius: 4px;
+  }
+  
+  /* Drag-and-Drop Upload */
+  .upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+  padding-top:20px;
+  padding-bottom:20px;
+    
+    margin-right: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    position: relative;
+    /*max-width: 1200px;*/
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  /*width: calc(100% - 250px); /* Adjust width dynamically based on the sidebar width */
+  /*margin: 0 auto; /* Center the upload area */
+  position: relative; /* Ensure proper positioning within its container */
+  box-sizing: border-box;
+  transition: width 0.3s ease; /* Smoothly adjust width when sidebar toggles */
+}
+.sidebar-open .upload-area {
+  width: calc(100% - 250px); /* Update width when the sidebar is expanded */
+}
+.sidebar-open .dashboard {
+ /* margin-left: 250px; /* Adjust content when the sidebar is open */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-closed .dashboard {
+  /*margin-left: 50px; /* Adjust content when the sidebar is closed */
+  transition: margin-left 0.3s ease;
+}
+
+
+.upload-area.drag-over {
+  border-color: #4caf50;
+  background-color: #f1f8e9;
+}
+
+.upload-area:hover {
+    background-color: #f8f9fa;
+}
+
+ 
+/* Ensure search bar, sort, and drag-drop area fit inside */
+/* Ensure the container has padding on the right */
+.search-container,
+.sort-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+   
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+}
+.sidebar-open .search-container,
+.sort-container {
+  max-width: calc(100% - 230px); /* Prevents it from hitting screen edges */
+}
+
+.sidebar-closed .search-container,
+.sort-container {
+  max-width: calc(100% - 60px); /* Prevents it from hitting screen edges */
+}
+
+/* Adjust the input and select fields */
+.search-container input,
+.upload-area input,
+.sort-container select {
+    flex: 1; /* Ensures responsiveness */
+    min-width: 200px;
+   margin-right: 20px; /* Space between elements */
+}
+
+/* Prevent the file grid from expanding horizontally */
+.file-grid {
+    display: flex;
+    flex-wrap: wrap; /* Ensures wrapping instead of stretching */
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+.search-sort-wrapper {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Adds spacing between search and sort */
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px; /* Adds padding on both sides */
+}
+
+  /* File Container */
+  .file-container.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap:-2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 87%;
+  }
+  .file-container.list {
+    grid-template-columns: 1fr;
+  }
+  .file-preview {
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .file-preview ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .file-preview li {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+  
+  .layout-toggle {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* File Card */
+  .file-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure proper spacing between elements */
+  align-items: center; /* Center-align items */
+  }
+  .file-card button {
+    margin-top: 10px; /* Add spacing between the button and other elements */
+    align-self: stretch; /* Make the button stretch to fill the width of the card */
+  }
+  .file-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .file-card img {
+    width: 100%;
+    max-width: 150px; /* Set a maximum size for thumbnails */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the thumbnail fits within its container */
+    margin-bottom: 10px; /* Add spacing below the image */
+  }
+  .file-card p {
+    margin: 5px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Keep text on a single line */
+  }
+  
+  /* Tooltip for File Details */
+  .file-card:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 10;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* File Selection Checkbox */
+  .file-card input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+  }
+  
+  /* File Card Buttons */
+  .file-card button {
+    background: #0078D4;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+  }
+  .file-card button:hover {
+    background: #005bb5;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  .pagination button {
+    background: #0078D4;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .pagination button.active {
+    background: #005bb5;
+  }
+  
+  /* File Modal Preview */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  .modal.active {
+    display: flex;
+  }
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+  }
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .modal-close {
+    margin-top: 10px;
+    background: #0078D4;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ /* Main content should adjust when sidebar is open */
+.main-content {
+ /* margin-left: 250px; /* Same as sidebar width */
+  /*width: calc(100% - 250px);*/
+  transition: margin-left 0.3s ease;
+}
+  /* Adjust when sidebar is collapsed */
+.sidebar.collapsed + .main-content {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+}
+
+  /* Context Menu */
+  .context-menu {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .context-menu.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+  }
+  .context-menu li {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .context-menu li:hover {
+    background: #f0f0f0;
+  }
+  /* Ensures no content stretches beyond screen width */
+.layout-container, .layout-content, .dashboard {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+  /* Grid/List Layout Toggle */
+  
+  .layout-buttons {
+    margin-top: 20px;
+    text-align: right;
+  }
+  .layout-buttons button {
+    background: #0078D4;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  .layout-toggle {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .layout-toggle button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+/*file thumnails*/
+.file-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  position: relative; /* Required for selection box */
+}
+
+.file-thumbnail,
+.file-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+.file-name,.folder-name  {
+  font-size: 14px;
+}
+.file-thumbnail {
+  border-radius: 4px;
+}
+.file-item.selected,.folder-item.selected {
+  border: 2px solid #007bff; /* Highlight selected files */
+  background-color: rgba(0, 123, 255, 0.1); /* Light background for selected files */
+}
+.selection-box {
+  position: absolute;
+  border: 2px dashed #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+  pointer-events: none;
+}
+.folder-view {
+  padding-left: 20px;
+}
+
+.folder {
+  margin-bottom: 10px;
+}
+.folder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  
+}
+
+.file-item:hover, .folder-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* Prevent text selection */
+.file-item, .folder-item {
+  user-select: none;
+}
+.file-container {
+  
+  user-select: none; /* Prevent text selection during drag */
+}
+
+/* Disable hover effects when in selection mode */
+.is-selection-mode .folder-item:hover,
+.is-selection-mode .file-item:hover {
+  background: inherit !important;
+}
+  /* Responsive Design */
+  @media (max-width: 768px) {
+
+    body{
+      overflow-x: auto;
+    }
+    .dashboard-container {
+      max-width: 100%;
+      padding: 0 10px;
+  }
+  .search-container, 
+  .sort-container, 
+  .upload-area {
+      flex-direction: column; /* Stack elements on smaller screens */
+      align-items: center;
+  }
+    .file-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .upload-area {
+      width: 90%; /* Make the drop box take most of the screen width on smaller screens */
+    }
+    .main-content {
+      margin-left: 60px;
+      width: calc(100% - 60px);
+      overflow: auto;
+  }
+  
+ 
+  
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    
+  }
+  

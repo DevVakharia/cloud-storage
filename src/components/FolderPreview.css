@@ -1,0 +1,124 @@
+/* Folder Item */
+.folder-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+   /* padding: 10px;*/
+    border: none; /* Remove border */
+    background-color: transparent; /* Remove background */
+    /*height:90px;*/
+    width: 120px;
+  }
+  
+  .folder-item:hover {
+    background-color: transparent; /* Remove hover background */
+  }
+  
+  .folder-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    
+  }
+  
+  .folder-name {
+    font-size: 14px;
+    text-align: center;
+    align-items: center;
+    max-width: 100px; 
+  }
+  
+  /* File Item */
+  .file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .file-item:hover {
+    background-color: transparent; /* Remove hover background */
+  }
+  
+ 
+  .file-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+  .file-name {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    font-size: 14px;
+  
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.3s ease-in-out;}
+  
+  .file-name:hover {
+    text-decoration: underline;
+  }
+  
+
+/* Expanded file name - multi-line support */
+.file-name.expanded {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 150px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #f9f9f9;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  min-width: 120px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+  /* Folder Preview */
+  .folder-preview {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 95%;
+    
+    transition: width 0.3s ease; 
+  
+  }
+  
+  .folder-contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+    
+  }
+  .selection-box {
+    position: absolute;
+    background-color: rgba(0, 123, 255, 0.3); /* Light blue */
+    border: 1px solid rgba(0, 123, 255, 0.7);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .file-item.selected {
+    background-color: rgba(0, 123, 255, 0.3); /* Highlight selected files */
+    border-radius: 5px;
+  }
+  

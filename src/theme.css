@@ -1,0 +1,33 @@
+/* Default (Light Mode) */
+.app {
+  background-color: #f9f9f9;
+  color: #333333;
+}
+
+.app .sidebar {
+  background-color: #ffffff;
+}
+
+.app .file-grid-item {
+  background-color: #eaeaea;
+  border: 1px solid #cccccc;
+}
+
+/* Dark Mode */
+.app.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.app.dark-mode .sidebar {
+  background-color: #1f1f1f;
+}
+
+.app.dark-mode .file-grid-item {
+  background-color: #2a2a2a;
+  border: 1px solid #555555;
+}
+
+.app.dark-mode a {
+  color: #4a90e2;
+}

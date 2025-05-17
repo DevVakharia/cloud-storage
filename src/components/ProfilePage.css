@@ -1,0 +1,194 @@
+/* ProfilePage.css */
+.pp-container {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #001f3f 0%, #00284d 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 2rem;
+}
+
+/* Enhanced Background Elements */
+.pp-background-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pp-geo-shape {
+  position: absolute;
+  opacity: 0.08;
+  animation: float 25s infinite linear;
+  filter: blur(1px);
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(2vw, 4vh) rotate(3deg); }
+  66% { transform: translate(-1vw, -2vh) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.pp-connection-line {
+  position: absolute;
+  background: linear-gradient(to right, 
+      transparent 0%, 
+      rgba(255,255,255,0.1) 50%, 
+      transparent 100%);
+  height: 1px;
+  animation: lineFlow 20s infinite linear;
+}
+
+@keyframes lineFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Modern Glass Card */
+.pp-card {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Elegant Form Elements */
+.pp-form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.pp-input {
+  width: 100%;
+  padding: 1.2rem 0;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 1rem;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pp-input:focus {
+  outline: none;
+  border-bottom-color: #0073e6;
+  box-shadow: 0 2px 0 0 rgba(0, 115, 230, 0.1);
+}
+
+/* Animated Floating Labels */
+.pp-label {
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left center;
+}
+
+.pp-input:focus ~ .pp-label,
+.pp-input:not(:placeholder-shown) ~ .pp-label {
+  transform: translateY(-1.5rem) scale(0.85);
+  color: #0073e6;
+}
+
+/* Premium Buttons */
+.pp-button {
+  padding: 1rem 2.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0073e6 0%, #0059b3 100%);
+  color: white;
+}
+
+.pp-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.3),
+      transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.pp-button:hover:before {
+  left: 100%;
+}
+
+.pp-button-secondary {
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  color: #004080;
+}
+
+.pp-button-secondary:hover {
+  border-color: #0073e6;
+  color: #0073e6;
+}
+
+/* Status Messages with Icons */
+.pp-status {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 500;
+}
+
+.pp-status:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.pp-status-success {
+  background: rgba(0, 200, 83, 0.1);
+  color: #00c853;
+  border: 2px solid rgba(0, 200, 83, 0.3);
+}
+
+.pp-status-success:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300c853'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+.pp-status-error {
+  background: rgba(255, 23, 68, 0.1);
+  color: #ff1744;
+  border: 2px solid rgba(255, 23, 68, 0.3);
+}
+
+.pp-status-error:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff1744'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+/* Suggested Sidebar Color */
+/* Original: #2c3e50 */
+/* Suggested: #1a2835 (darker slate) or #213140 (blue-toned) */
+/* Add this to your sidebar CSS */
+.sidebar {
+  background: #1a2835;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,210 @@
+/* Signup.css */
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      135deg,
+      #001f3f,
+      #003366,
+      #004080,
+      #0059b3
+    );
+    padding: 2rem;
+  }
+  .signup-card {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+    min-height: 500px;
+    overflow: hidden;
+    height:100%;
+
+  }
+  
+  .brand-section {
+    background: linear-gradient(135deg, #0073e6, #0059b3);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .brand-content {
+    color: white;
+  }
+  
+  .logo-auth {
+    width: 80px;
+    margin-bottom: 2rem;
+  }
+  
+  .signup-title {
+    color: white;
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .brand-tagline {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+  }
+  .form-section {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    min-height: 500px;
+    gap: 1.5rem; /* Adds uniform spacing without pushing elements */
+}
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 2rem;
+    border: 2px solid rgba(0, 115, 230, 0.1);
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f8fafc;
+  }
+  
+  .form-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.15);
+    background: white;
+    outline: none;
+  }
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(135deg, #0059b3, #0073e6);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 115, 230, 0.3);
+  }
+  
+/* Ensure "Sign in here" stays visible */
+.auth-links {
+  text-align: center;
+  margin-top: 0.25rem; /* Creates space above it */
+  padding-bottom: 1rem; /* Adds space at the bottom */
+  color: var(--navy);
+}
+
+  
+  .auth-links a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .auth-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-blue);
+    transition: width 0.3s ease;
+   margin-top: 0.2rem;
+  }
+  
+  .auth-links a:hover::after {
+    width: 100%;
+  }
+  
+/* Reserve space for error message to avoid shifting elements */
+.error-messages {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fca5a5;
+  min-height: 48px; /* Ensures reserved space */
+  display: flex;
+  align-items: center;
+}
+  .success-message {
+    color: #16a34a;
+    background: #dcfce7;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid #86efac;
+  }
+  
+  .resend-btn {
+    background:#4294ed;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 7px;
+    margin-top: 1rem;
+  }
+  
+  .resend-btn:disabled {
+    color: #ffffff;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 768px) {
+    .signup-card {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      margin: 2rem;
+    }
+    
+    .brand-section {
+      padding: 3rem 2rem;
+    }
+    
+    .form-section {
+      padding: 3rem 2rem;
+    }
+    
+    .logo-auth {
+      width: 60px;
+    }
+  }

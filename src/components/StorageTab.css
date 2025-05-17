@@ -1,0 +1,70 @@
+.storage-tab {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .storage-bar-container {
+    margin: 20px 0;
+  }
+  
+  .storage-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .used-storage-bar {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #4caf50;
+    transition: width 0.5s ease;
+    align-self: auto;
+
+margin-top: -1px;
+margin-left: 0px;
+  }
+  
+  .simulate-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .simulate-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .upgrade-section {
+    margin-top: 20px;
+  }
+  
+  .upgrade-message {
+    color: red;
+    font-weight: bold;
+  }
+
+
+  .upgrade-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .upgrade-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  

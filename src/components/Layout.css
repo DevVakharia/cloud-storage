@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.layout {
+    
+    min-height: 100vh;
+  }
+  
+  /*.sidebar {
+    width: 250px;  /* Adjust width of the sidebar */
+   /* background-color: #2c3e50;  /* Sidebar color */
+   /* padding: 20px;
+    color: white;
+  }*/
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;  /* Background color for content */
+    overflow-y: auto;
+  }
+
+
+  
+  .main-content {
+    
+    /*margin-left: 250px; /* Adjust to match the sidebar width */
+    padding: 1rem;
+    transition: margin-left 0.3s ease;
+  }
+
+  .layout-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Prevent extra scrollbar */
+  }
+  
+  .layout-content {
+    flex: 1;
+    /*padding: 20px;*/
+    overflow-y: auto; /* Only content scrolls */
+  }
+  

@@ -1,0 +1,77 @@
+/* General Styles */
+.pricing-page {
+    text-align: center;
+    /*padding: 50px 20px;*/
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+.hero-pricing{ 
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Pricing Cards */
+  .pricing-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .pricing-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .pricing-card h3 {
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pricing-card li {
+    font-size: 16px;
+    color: #666;
+    margin: 8px 0;
+  }
+  
+  .pricing-card button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .pricing-card button:hover {
+    opacity: 0.8;
+  }
+  
