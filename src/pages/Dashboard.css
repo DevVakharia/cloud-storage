@@ -163,7 +163,8 @@ body {
 }
 .sidebar-open .search-container,
 .sort-container {
-  max-width: calc(100% - 230px); /* Prevents it from hitting screen edges */
+  max-width: calc(100% - 230px); 
+  /* Prevents it from hitting screen edges */
 }
 
 .sidebar-closed .search-container,
