@@ -8,7 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import ProfilePage from "./components/ProfilePage";
 import Sidebar from "./components/Sidebar";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
-import "./App.css";
+import "./app.css";
 import Layout from "./components/Layout";
 import StorageTab from "./components/StorageTab";
 import SettingsTab from "./components/SettingsTab";
